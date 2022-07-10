@@ -4,7 +4,6 @@ orbs:
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
-  # different jobs are calles later in the workflows sections
 jobs:
   build:
     docker:
@@ -24,45 +23,42 @@ jobs:
             echo "NPM --version" 
             echo $(npm --version)
             npm run frontend:install
-      # TODO: Install dependencies in the the backend API          
+      # Install backend API dependencies
       - run:
           name: Install API Dependencies
           command: |
             npm run api:install
-      # TODO: Lint the frontend
+      # Lint the frontend App
       - run:
           name: Front-End Lint
           command: |
             npm run frontend:lint
-      # TODO: Build the frontend app
+      # Build the frontend app
       - run:
           name: Front-End Build
           command: |
             npm run frontend:build
-      # TODO: Build the backend API      
+      # Build the backend API      
       - run:
           name: API Build
           command: |
-            npm run backend:build
-  # deploy step will run only after manual approval
+            npm run api:build
+  # Deploy workflow will run only after manual approval in circleci dashboard
   deploy:
     docker:
       - image: "cimg/base:stable"
-      # more setup needed for aws, node, elastic beanstalk
+      # Setup aws, node, & elastic beanstalk
     steps:
       - node/install:
-          node-version: '14.15' 
-      - eb/setup
-      - aws-cli/setup
+          node-version: '14.15'
       - checkout
+      - aws-cli/setup
+      - eb/setup
       - run:
-          name: Deploy App
-          # TODO: Install, build, deploy in both apps
+          # Install, build, deploy in both apps
+          name: deploy
           command: |
-            
-            npm run deploy
-            echo "# TODO: Install, build, deploy in both apps - did it deploy both?"
-            
+            npm run deploy            
 workflows:
   udagram:
     jobs:
