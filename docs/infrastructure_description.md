@@ -1,4 +1,4 @@
-# Infrastrucutre Description
+# Infrastructure Description
 
 Within this project we have used only Amazon Web Services for the infrastructure.
 
@@ -25,6 +25,6 @@ The backend was hosted in an EB managed S3 bucket with appropriate access.
 
 
 
-# Infrastructure Diagram
+# Architecture Diagram
 
-<img src="infrastructure_diagram.png" >
+<img src="architecture_diagram.png" >

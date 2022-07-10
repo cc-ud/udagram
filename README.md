@@ -1,16 +1,16 @@
 # FSD Hosting a Full-Stack Application
 
-Although software development is often considered the most important part of an apps life-cycle, deployment tends to be overlooked, for without deploying an app, no matter how great the app is, end users cannot use it. So far in this course we have focussed on software development.
+Although software development is often considered the most important part of an apps life-cycle, deployment tends to be overlooked, for without deploying an app, no matter how great the app is, end users cannot use it. So far in this course we have focused on software development.
 
-This project focussed on the deployment process. Deployment within a CI/CD environment, that is, a Continuous Integration (automatic build and testing), together with Continuous Deployment (automation of the software release process) 
+This project was involved with the deployment process. Deployment within a CI/CD environment, that is, a Continuous Integration (automatic build and testing), together with Continuous Deployment (automation of the software release process) 
 
 
 # Introduction/Overview of Services/Functionality
 ---
 
-Taking a Full-Stack application (Backend and Frontend) and deploying it to a cloud service provider allows the app to universally be availble for end-users.
+Taking a Full-Stack application (Backend and Frontend) and deploying it to a cloud service provider allows the app to universally be available for end-users.
 
-I have eleacted to utilise the provided 'starter' project to gain a better feel for the DevOps process. 
+I have elected to utilise the provided 'starter' project to gain a better feel for the DevOps process and having to deal with software projects from an unknown source. 
 
 The supplied app is a simple image sharing app called Udagram.
 Users register new accounts, login and post images with captions that can be shared with other users.
@@ -19,7 +19,7 @@ In order to make the service available the following services/technologies were 
 
 * Amazon Web Services
     * S3 (Simple Storage Service)
-    * Elasticbeanstalk (Runs and manages web apps)
+    * Elastic Beanstalk (Runs and manages web apps)
     * RDS (Relational Database Services)
 
 * CircleCi
@@ -53,7 +53,7 @@ The required and relevant screenshots can be found in the github repository
 
 repo->docs->screenshots
 
-# Architecure Diagrams/Documentation
+# Architetcure Diagrams/Documentation
 
 The required Diagrams & Documents can be found in the github repository
 
