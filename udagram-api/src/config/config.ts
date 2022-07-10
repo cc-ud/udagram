@@ -17,6 +17,7 @@ export const config = {
   aws_secret_access_key: process.env.AWS_SECRET_ACCESS_KEY,
   aws_region: process.env.AWS_REGION,
   aws_profile: process.env.AWS_PROFILE,
+  aws_eb_profile: process.env.AWS_EB_PROFILE,
   aws_media_bucket: process.env.AWS_BUCKET,
   url: process.env.URL,
   jwt: {
