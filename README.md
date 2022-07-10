@@ -1,72 +1,78 @@
-# Hosting a Full-Stack Application
+# FSD Hosting a Full-Stack Application
 
-### **You can use you own project completed in previous courses or use the provided Udagram app for completing this final project.**
+Although software development is often considered the most important part of an apps life-cycle, deployment tends to be overlooked, for without deploying an app, no matter how great the app is, end users cannot use it. So far in this course we have focussed on software development.
 
+This project focussed on the deployment process. Deployment within a CI/CD environment, that is, a Continuous Integration (automatic build and testing), together with Continuous Deployment (automation of the software release process) 
+
+
+# Introduction/Overview of Services/Functionality
 ---
 
-In this project you will learn how to take a newly developed Full-Stack application built for a retailer and deploy it to a cloud service provider so that it is available to customers. You will use the aws console to start and configure the services the application needs such as a database to store product information and a web server allowing the site to be discovered by potential customers. You will modify your package.json scripts and replace hard coded secrets with environment variables in your code.
+Taking a Full-Stack application (Backend and Frontend) and deploying it to a cloud service provider allows the app to universally be availble for end-users.
 
-After the initial setup, you will learn to interact with the services you started on aws and will deploy manually the application a first time to it. As you get more familiar with the services and interact with them through a CLI, you will gradually understand all the moving parts.
+I have eleacted to utilise the provided 'starter' project to gain a better feel for the DevOps process. 
 
-You will then register for a free account on CircleCi and connect your Github account to it. Based on the manual steps used to deploy the app, you will write a config.yml file that will make the process reproducible in CircleCi. You will set up the process to be executed automatically based when code is pushed on the main Github branch.
+The supplied app is a simple image sharing app called Udagram.
+Users register new accounts, login and post images with captions that can be shared with other users.
 
-The project will also include writing documentation and runbooks covering the operations of the deployment process. Those runbooks will serve as a way to communicate with future developers and anybody involved in diagnosing outages of the Full-Stack application.
+In order to make the service available the following services/technologies were used:
 
-# Udagram
+* Amazon Web Services
+    * S3 (Simple Storage Service)
+    * Elasticbeanstalk (Runs and manages web apps)
+    * RDS (Relational Database Services)
 
-This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
+* CircleCi
+    * Pre-built Orb integration (aws s3 & EB)
+    * Github integration to trigger builds
+    * Pipeline flow
+    * Workflow/Job integration
+        * for builds
+        * for approval
+        * for deployment
 
 
 
-### Dependencies
+# Application Link
+The application can be found by clicking the following link: 
 
-```
-- Node v14.15.1 (LTS) or more recent. While older versions can work it is advisable to keep node to latest LTS version
+[Udagram_App](http://fe-udagram-app.s3-website-us-east-1.amazonaws.com)
 
-- npm 6.14.8 (LTS) or more recent, Yarn can work but was not tested for this project
+http://fe-udagram-app.s3-website-us-east-1.amazonaws.com
 
-- AWS CLI v2, v1 can work but was not tested for this project
 
-- A RDS database running Postgres.
+The link to the CircleCI 
 
-- A S3 bucket for hosting uploaded pictures.
+https://app.circleci.com/pipelines/github/cc-ud/udagram/88/workflows/81e94c73-b582-4cff-8877-a77f52c9fa14
 
-```
+[![CircleCI](https://circleci.com/github/cc-ud/udagram.svg?style=svg)](https://app.circleci.com/pipelines/github/cc-ud/udagram/88/workflows/81e94c73-b582-4cff-8877-a77f52c9fa14)
 
-### Installation
+# Screenshots
 
-Provision the necessary AWS services needed for running the application:
+The required and relevant screenshots can be found in the github repository
 
-1. In AWS, provision a publicly available RDS database running Postgres. <Place holder for link to classroom article>
-1. In AWS, provision a s3 bucket for hosting the uploaded files. <Place holder for tlink to classroom article>
-1. Export the ENV variables needed or use a package like [dotnev](https://www.npmjs.com/package/dotenv)/.
-1. From the root of the repo, navigate udagram-api folder `cd starter/udagram-api` to install the node_modules `npm install`. After installation is done start the api in dev mode with `npm run dev`.
-1. Without closing the terminal in step 1, navigate to the udagram-frontend `cd starter/udagram-frontend` to intall the node_modules `npm install`. After installation is done start the api in dev mode with `npm run start`.
+repo->docs->screenshots
 
-## Testing
+# Architecure Diagrams/Documentation
 
-This project contains two different test suite: unit tests and End-To-End tests(e2e). Follow these steps to run the tests.
+The required Diagrams & Documents can be found in the github repository
 
-1. `cd starter/udagram-frontend`
-1. `npm run test`
-1. `npm run e2e`
+repo->docs
 
-There are no Unit test on the back-end
 
-### Unit Tests:
 
-Unit tests are using the Jasmine Framework.
 
-### End to End Tests:
 
-The e2e tests are using Protractor and Jasmine.
+## About Udacity's Full Stack Javascript Developer Nanodegree
 
-## Built With
+Students who graduate from the program will be able to:  
+* Build client-side experiences and applications using Angular, collecting data from users and from
+backends, providing rich user interactions and organizing code and data.
+* Build server-side executed code with TypeScript and integrate with 3rd party code such as
+Angular’s Server Side Rendering.
+* Leverage Express.js to architect and build APIs that power dynamic functionality and to generate
+and supply data to web and mobile clients.
+* Persist data to a database, query and retrieve data, and pass this data all the way through to
+various client devices.
 
-- [Angular](https://angular.io/) - Single Page Application Framework
-- [Node](https://nodejs.org) - Javascript Runtime
-- [Express](https://expressjs.com/) - Javascript API Framework
-
-## License
-
-[License](LICENSE.txt)
+ [Udacity Full Stack Javascript Developer Nanodegree](https://www.udacity.com/course/full-stack-javascript-developer-nanodegree--nd0067)
