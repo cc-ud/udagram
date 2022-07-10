@@ -55,7 +55,7 @@ jobs:
       - aws-cli/setup
       - eb/setup
       - run:
-          # Install, build, deploy in both apps (FE/BE)
+          # Install, build, deploy in both apps FE/BE
           name: deploy
           command: |
             npm run deploy            
